@@ -1,7 +1,7 @@
 /*Name this external file gallery.js*/
 
 function upDate(preview){
-    document.getElementById('image').style.backgroundImage = "url('"+preview.src+"')";
+    document.getElementById('image').style.backgroundImage = "url('" + preview.src + "')";
     document.getElementById('image').innerHTML = preview.alt;
     /* In this function you should 
        1) change the url for the background image of the div with the id = "image" 
@@ -14,7 +14,7 @@ function upDate(preview){
 }
    
 function unDo(){
-    document.getElementById('image').style.backgroundImage = "url('')";
+    document.getElementById('image').style.backgroundImage = "";
     document.getElementById('image').innerHTML = "Hover over an image below to display here.";
         /* In this function you should 
        1) Update the url for the background image of the div with the id = "image" 
