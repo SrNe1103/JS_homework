@@ -1,27 +1,23 @@
-/*Name this external file gallery.js*/
-
 function upDate(preview){
-    document.getElementById('image').style.backgroundImage = "url('" + preview.src + "')";
-    document.getElementById('image').innerHTML = preview.alt;
-    /* In this function you should 
-       1) change the url for the background image of the div with the id = "image" 
-       to the source file of the preview image
-       
-       2) Change the text  of the div with the id = "image" 
-       to the alt text of the preview image 
-       */
-     
+    pic_frame = document.querySelector('#image');
+    pic_frame.style.backgroundImage = "url('" + preview.src + "')";
+    pic_frame.innerHTML = preview.alt;
+    pic_frame.style.height = preview.height * 575 / preview.width + "px";
 }
    
 function unDo(){
-    document.getElementById('image').style.backgroundImage = "";
-    document.getElementById('image').innerHTML = "Hover over an image below to display here.";
-        /* In this function you should 
-       1) Update the url for the background image of the div with the id = "image" 
-       back to the orginal-image.  You can use the css code to see what that original URL was
-       
-       2) Change the text  of the div with the id = "image" 
-       back to the original text.  You can use the html code to see what that original text was
-       */
-           
+    pic_frame = document.querySelector('#image');
+    pic_frame.style.backgroundImage = "";
+    pic_frame.innerHTML = "Hover over or select an image below to display here."; 
 }
+
+let images = document.querySelectorAll('.preview');
+
+for (let image of images) {
+    image.addEventListener('mouseover', () => upDate(image));
+    image.addEventListener('mouseout', unDo);
+    image.addEventListener('focus', () => upDate(image));
+    image.addEventListener('blur', unDo);
+    image.setAttribute('tabindex', 0);
+    console.log(image);
+};
