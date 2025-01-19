@@ -2,7 +2,7 @@ function upDate(preview){
     pic_frame = document.querySelector('#image');
     pic_frame.style.backgroundImage = "url('" + preview.src + "')";
     pic_frame.innerHTML = preview.alt;
-    pic_frame.style.height = preview.height * 500 / preview.widt + "px";
+    pic_frame.style.height = preview.height * 500 / preview.width - 41 + "px";
 }
    
 function unDo(){

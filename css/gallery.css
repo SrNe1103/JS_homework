@@ -23,12 +23,13 @@ span{
 }
 
 #display{
-    height: 650px;
+    height: 670px;
 }
 
 #image{
     width: 500px;
     height: 620px;
+    padding-top: 40px;
     border:5px solid black;
     margin:0 auto;
     background-color: #68d4ff;
